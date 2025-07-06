@@ -1,0 +1,68 @@
+{
+    "name": "atomicsmash/nucleus",
+    "description": "Agency management tool for onboarding and managing WordPress sites",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matt Stone",
+            "email": "matt.stone@atomicsmash.co.uk"
+        }
+    ],
+    "minimum-stability": "stable",
+    "repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org",
+			"only": [
+				"wpackagist-plugin/*",
+				"wpackagist-theme/*"
+			]
+		},
+		{
+			"type": "composer",
+			"url": "https://connect.advancedcustomfields.com"
+		},
+		{
+			"type": "composer",
+			"url": "https://release-belt.atomicsmash.co.uk"
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "kinsta/kinsta-mu-plugins",
+				"type": "wordpress-muplugin",
+				"version": "3.2.0",
+				"dist": {
+					"url": "https://kinsta.com/kinsta-tools/kinsta-mu-plugins.zip",
+					"type": "zip"
+				}
+			}
+		}
+	],
+	"config": {
+		"vendor-dir": "vendor",
+		"secure-http": true,
+		"sort-packages": true,
+		"allow-plugins": {
+			"composer/installers": true,
+			"johnpbloch/wordpress-core-installer": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+    "extra": {
+		"wordpress-install-dir": "public/core",
+		"installer-paths": {
+			"public/app/plugins/{$name}/": [
+				"type:wordpress-plugin",
+				"type:wordpress-muplugin"
+			]
+		}
+	},
+  "require": {
+        "advanced-custom-fields-pro/advanced-custom-fields-pro": "6.4.1",
+        "johnpbloch/wordpress": "6.7.2",
+        "rbdwllr/wordpress-salts-generator": "^0.2.0",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
