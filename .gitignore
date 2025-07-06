@@ -5,6 +5,9 @@ auth.json
 # Kinsta hosting specific
 /private/
 
+# Logs
+*.log
+
 # Node
 /node_modules/
 
@@ -13,3 +16,4 @@ auth.json
 
 # WordPress
 /public/core/
+/public/app/plugins/*
