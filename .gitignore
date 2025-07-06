@@ -1,12 +1,15 @@
-# Kinsta hosting specific
-/private/
-
 # Composer
 /vendor/
 auth.json
 
+# Kinsta hosting specific
+/private/
+
 # Node
 /node_modules/
+
+# Turbo
+/.turbo/
 
 # WordPress
 /public/core/
