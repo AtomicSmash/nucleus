@@ -1,0 +1,12 @@
+# Kinsta hosting specific
+/private/
+
+# Composer
+/vendor/
+auth.json
+
+# Node
+/node_modules/
+
+# WordPress
+/public/core/
