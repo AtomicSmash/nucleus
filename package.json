@@ -1,0 +1,37 @@
+{
+  "name": "nucleus",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "public/app/themes/electron"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "watch": "turbo run watch",
+    "clean": "turbo run clean",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "build:theme": "npm run build:theme:css && npm run build:theme:js",
+    "build:theme:css": "sass public/app/themes/electron/src/scss:public/app/themes/electron/dist/css --style=compressed --no-source-map",
+    "build:theme:js": "tsc --project tsconfig.json --outDir ./public/app/themes/electron/dist/js",
+    "dev:theme": "npm run dev:theme:css & npm run dev:theme:js",
+    "dev:theme:css": "sass public/app/themes/electron/src/scss:public/app/themes/electron/dist/css --watch --style=expanded",
+    "dev:theme:js": "tsc --project tsconfig.json --watch --outDir ./public/app/themes/electron/dist/js",
+    "watch:theme": "npm run dev:theme",
+    "clean:theme": "rm -rf public/app/themes/electron/dist",
+    "lint:theme": "eslint public/app/themes/electron/src/ts --ext .ts,.js",
+    "type-check:theme": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "turbo": "^1.10.0",
+    "sass": "^1.69.0",
+    "typescript": "^5.2.0",
+    "@types/node": "^20.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0"
+  },
+  "packageManager": "npm@9.0.0"
+}
